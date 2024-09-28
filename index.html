@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/RecipeLogo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>RecipeBox</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="./img/recipeBoxLogo.jpg" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result: </h1>
+        </div>
+        
+        <!-- Main Content -->
+<div class="card-grid">
+    <div class="food-list" id="food-list">
+        <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/butter-chicken-.jpg" alt="Butter Chicken">
+            </div>
+            <div class="card-body">
+                <h3>Butter Chicken</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/biriyani.jpg" alt="Biryani">
+            </div>
+            <div class="card-body">
+                <h3>Hyderabadi Biryani</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/samosa.jpeg.jpg" alt="Samosa">
+            </div>
+            <div class="card-body">
+                <h3>Samosa</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/masala-dosa.jpg" alt="Masala Dosa">
+            </div>
+            <div class="card-body">
+                <h3>Masala Dosa</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/rogan_josh.webp" alt="Rogan Josh">
+            </div>
+            <div class="card-body">
+                <h3>Kashmiri Rogan Josh</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/panner tikka.jpeg.jpg" alt="Paneer Tikka">
+            </div>
+            <div class="card-body">
+                <h3>Paneer Tikka</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/mutton curry.jpg" alt="Lamb Curry">
+            </div>
+            <div class="card-body">
+                <h3>Lamb Curry</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/air-fryer-whole-tandoori-chicken-3.jpg" alt="Chicken Tandoori">
+            </div>
+            <div class="card-body">
+                <h3>Chicken Tandoori</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/gulab-jamun.webp" alt="Gulab Jamun">
+            </div>
+            <div class="card-body">
+                <h3>Gulab Jamun</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/chole.jpg" alt="Chole Bhature">
+            </div>
+            <div class="card-body">
+                <h3>Chole Bhature</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="./img/dal mak.jpeg.jpg" alt="Dal Makhani">
+            </div>
+            <div class="card-body">
+                <h3>Dal Makhani</h3>
+            </div>
+            <div class="card-footer">
+                <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Ending of Main Content -->
+
+            <!--Recipe Details-->
+<div class="meal-detail" id="meal-detail">
+    <!-- recipe close btn -->
+    <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Butter Chicken</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">
+                Butter Chicken, also known as Murgh Makhani, is a popular Indian dish of chicken cooked in a spiced tomato-based sauce enriched with butter and cream. Originating from Delhi, it’s celebrated worldwide for its rich and creamy texture and well-balanced spices.
+            </p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p>
+                <br>500g chicken breast (cut into cubes)
+                <br>1 cup yogurt
+                <br>2 tbsp lemon juice
+                <br>2 tsp garam masala
+                <br>1 tsp turmeric
+                <br>1 tsp red chili powder
+                <br>1 tsp ground cumin
+                <br>2 tbsp butter
+                <br>1 large onion (chopped)
+                <br>3 garlic cloves (minced)
+                <br>1 inch ginger (minced)
+                <br>400g canned tomatoes (or fresh puréed tomatoes)
+                <br>1/2 cup heavy cream
+                <br>Salt to taste
+                <br>Fresh coriander for garnish
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                <br>1. Marinate the chicken with yogurt, lemon juice, garam masala, turmeric, red chili powder, and cumin for at least 1 hour (the longer, the better).
+                <br>2. Heat butter in a large pan over medium heat and sauté the onions, garlic, and ginger until golden and fragrant.
+                <br>3. Add the marinated chicken and cook until browned on all sides.
+                <br>4. Stir in the canned tomatoes and bring to a simmer. Cook for 15-20 minutes until the chicken is fully cooked.
+                <br>5. Reduce heat and stir in the heavy cream. Let it simmer for 5 minutes.
+                <br>6. Adjust salt to taste, garnish with fresh coriander, and serve hot with naan or rice.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/butter-chicken-.jpg" alt="Butter Chicken">
+        </div>
+        <div class="meal-link">
+            <a href="https://youtu.be/JxSwBpEiYeQ?si=6EuH4vt8ya5rtPkY" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+
+            <!--Recipe Details-->
+<div class="second-meal-detail" id="second-meal-detail">
+    <!-- recipe close btn -->
+    <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Hyderabadi Biryani</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">
+                Hyderabadi Biryani is a fragrant and flavorful rice dish that originated in Hyderabad, India. Made with aromatic basmati rice, tender marinated meat (typically chicken or mutton), and a blend of rich spices, it’s a must-try for biryani lovers. This dish is a perfect mix of Mughlai and local Andhra cuisine, cooked using the traditional dum method.
+            </p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p>
+                <br>500g basmati rice
+                <br>500g chicken or mutton (cut into pieces)
+                <br>1 cup yogurt
+                <br>2 large onions (thinly sliced)
+                <br>2 tomatoes (chopped)
+                <br>2 tbsp ginger-garlic paste
+                <br>4-5 green chilies (slit)
+                <br>1/4 cup fresh coriander leaves (chopped)
+                <br>1/4 cup fresh mint leaves (chopped)
+                <br>3 tbsp biryani masala (store-bought or homemade)
+                <br>1 tsp turmeric powder
+                <br>1 tbsp red chili powder
+                <br>4 tbsp ghee or oil
+                <br>Whole spices (2-3 cloves, 1-inch cinnamon stick, 3-4 green cardamom, 1 bay leaf)
+                <br>1/2 tsp saffron (soaked in warm milk)
+                <br>Salt to taste
+                <br>1 lemon (juiced)
+                <br>Water for boiling rice
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                <br>1. Marinate the chicken or mutton with yogurt, ginger-garlic paste, biryani masala, turmeric, red chili powder, and salt. Let it marinate for at least 2 hours.
+                <br>2. In a large pot, boil water with salt and whole spices. Add the basmati rice and cook until 70% done. Drain and set aside.
+                <br>3. Heat ghee/oil in a pan, fry the onions until golden brown, and set aside half of them for garnish.
+                <br>4. In the same pan, add the marinated meat and cook until the meat is tender. Add chopped tomatoes, green chilies, coriander, and mint leaves, and cook until the tomatoes soften.
+                <br>5. In a separate heavy-bottomed pot, layer half of the semi-cooked rice, then layer the cooked meat over it, and finally, add the remaining rice on top.
+                <br>6. Drizzle saffron milk, lemon juice, and the fried onions over the top layer. Cover the pot with a tight-fitting lid.
+                <br>7. Cook on low heat for 25-30 minutes using the dum method (sealing the pot with dough or foil).
+                <br>8. Once done, gently mix the layers and serve hot, garnished with fresh coriander, mint, and the remaining fried onions.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/biriyani.jpg" alt="Hyderabadi Biryani">
+        </div>
+        <div class="meal-link">
+            <a href="https://youtu.be/aleED1mc5kI?si=3bGULpCGPTmxmk0n" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+  
+            <!-- Samosa Recipe Details -->
+<div class="third-meal-detail" id="third-meal-detail">
+    <!-- recipe close btn -->
+    <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn('meal-detail-samosa')">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Samosa</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Samosa is a popular Indian snack consisting of a crispy, deep-fried pastry filled with spiced potatoes, peas, and sometimes meat. It's often served with chutneys and is a favorite tea-time snack across India.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p>
+                For the dough:
+                <br>2 cups all-purpose flour
+                <br>4 tbsp oil or ghee
+                <br>Salt to taste
+                <br>Water, as needed
+                <br><br>For the filling:
+                <br>3 medium-sized potatoes, boiled and mashed
+                <br>1/2 cup peas, boiled
+                <br>1 tbsp oil
+                <br>1 tsp cumin seeds
+                <br>1 tsp coriander powder
+                <br>1 tsp garam masala
+                <br>1 tsp turmeric powder
+                <br>1/2 tsp red chili powder
+                <br>1 tsp ginger, minced
+                <br>Salt to taste
+                <br>Chopped fresh coriander
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. In a bowl, mix flour, oil, and salt. Gradually add water and knead into a firm dough. Cover and set aside for 30 minutes.<br>
+                2. For the filling, heat oil in a pan. Add cumin seeds, and when they crackle, add ginger and cook for 1 minute.<br>
+                3. Add mashed potatoes, peas, and all the spices (coriander powder, garam masala, turmeric, chili powder). Cook for 5-7 minutes, stirring occasionally.<br>
+                4. Stir in fresh coriander and mix well. Remove from heat and let the mixture cool.<br>
+                5. Divide the dough into small balls. Roll each ball into a circle and cut it in half to form two semi-circles.<br>
+                6. Shape each semi-circle into a cone, fill it with the potato mixture, and seal the edges with water.<br>
+                7. Deep-fry the samosas in hot oil until golden and crisp. Drain on a paper towel.<br>
+                8. Serve hot with tamarind or mint chutney.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/samosa.jpeg.jpg" alt="Samosa">
+        </div>
+        <div class="meal-link">
+            <a href="https://www.youtube.com/watch?v=W0zDu1o74Uc&pp=ygUNc2Ftb3NhIHJlY2lwZQ%3D%3D" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+  
+            <!-- Masala Dosa Recipe Details -->
+<div class="four-meal-detail" id="four-meal-detail">
+    <!-- recipe close btn -->
+    <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn('meal-detail-masala-dosa')">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Masala Dosa</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Masala Dosa is a crispy, savory South Indian crepe made from a fermented rice and lentil batter, filled with spiced mashed potatoes. Served with coconut chutney and sambar, it’s a beloved dish worldwide.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p>
+                For the dosa batter:
+                <br>2 cups rice
+                <br>1/2 cup urad dal (split black gram)
+                <br>1/4 tsp fenugreek seeds
+                <br>Water, as needed for soaking and grinding
+                <br>Salt to taste
+                <br><br>For the potato masala:
+                <br>3 medium potatoes, boiled and mashed
+                <br>1 onion, thinly sliced
+                <br>2 green chilies, chopped
+                <br>1 tsp mustard seeds
+                <br>1 tsp cumin seeds
+                <br>1/2 tsp turmeric powder
+                <br>1/4 tsp asafoetida (hing)
+                <br>10-12 curry leaves
+                <br>1 tbsp oil
+                <br>Salt to taste
+                <br>Fresh coriander leaves for garnish
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. Soak the rice, urad dal, and fenugreek seeds separately for 4-6 hours. Grind them into a smooth batter with water. Mix well and let it ferment overnight.<br>
+                2. For the potato masala, heat oil in a pan. Add mustard seeds, cumin seeds, curry leaves, and asafoetida. Let them splutter.<br>
+                3. Add onions and green chilies. Sauté until the onions are translucent.<br>
+                4. Add turmeric powder, mashed potatoes, and salt. Mix well and cook for 5-7 minutes. Garnish with fresh coriander and set aside.<br>
+                5. Heat a dosa pan and pour a ladle of fermented batter. Spread it in a circular motion to form a thin crepe.<br>
+                6. Drizzle oil around the edges and cook until golden and crispy. Place a portion of the potato masala in the center.<br>
+                7. Fold the dosa and serve hot with coconut chutney and sambar.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/masala-dosa.jpg" alt="Masala Dosa">
+        </div>
+        <div class="meal-link">
+            <a href="https://youtu.be/rJSICjc5s84?si=C1ieuLW82hcF7V1N" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+  
+<div class = "five-meal-detail" id="five-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Rogan Josh</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Rogan Josh is a signature Kashmiri curry made with tender pieces of lamb or mutton, slow-cooked in a rich, spiced gravy. The dish is characterized by its vibrant red color, which comes from Kashmiri red chilies, and its fragrant blend of spices. It’s a classic in Indian cuisine and is best served with naan or rice.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p>
+                <br>1 kg lamb or mutton, cut into pieces
+                <br>1 large onion, finely sliced
+                <br>3 tbsp ghee or oil
+                <br>1 cup yogurt, whisked
+                <br>2 tsp Kashmiri red chili powder
+                <br>1 tsp turmeric powder
+                <br>1 tsp ground cumin
+                <br>1 tsp ground coriander
+                <br>5-6 green cardamom pods
+                <br>3-4 cloves
+                <br>1-inch cinnamon stick
+                <br>2 bay leaves
+                <br>1 tbsp ginger-garlic paste
+                <br>Salt to taste
+                <br>Fresh coriander for garnish
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. Heat ghee or oil in a large pan. Add the cardamom, cloves, cinnamon, and bay leaves. Sauté until fragrant.<br>
+                2. Add the sliced onions and cook until golden brown.<br>
+                3. Stir in the ginger-garlic paste and cook for 1-2 minutes.<br>
+                4. Add the lamb or mutton pieces and sear until browned on all sides.<br>
+                5. Mix the yogurt with Kashmiri red chili powder, turmeric, cumin, and coriander. Add this yogurt mixture to the pan, stirring well to coat the meat.<br>
+                6. Add salt and a little water if needed. Cover and cook on low heat for about 1-1.5 hours, stirring occasionally, until the meat is tender.<br>
+                7. Garnish with fresh coriander leaves and serve hot with naan or basmati rice.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src = "./img/rogan_josh.webp" alt = "Rogan Josh">
+        </div>
+        <div class="meal-link">
+            <a href="https://youtu.be/XVgZBsuNU60?si=MSPLZB35n5V6Oqs7" class="meal-link-btn" >Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+<div class = "six-meal-detail" id="six-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Paneer Tikka</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Paneer Tikka is a popular Indian appetizer made from marinated chunks of paneer (Indian cottage cheese) grilled or baked to perfection. The marination includes a flavorful mix of yogurt and spices, and the dish is often served with chutneys and onions. It's a vegetarian favorite and can also be made in a tandoor or oven.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p><br>200g paneer, cut into cubes
+                <br>1/2 cup thick yogurt
+                <br>1 tbsp gram flour (besan)
+                <br>1 tsp ginger-garlic paste
+                <br>1/2 tsp turmeric powder
+                <br>1 tsp red chili powder
+                <br>1 tsp garam masala
+                <br>1 tsp cumin powder
+                <br>1 tsp coriander powder
+                <br>1 tsp chaat masala
+                <br>1 tbsp lemon juice
+                <br>2 tbsp oil
+                <br>Salt to taste
+                <br>Onion and bell pepper, cut into cubes (optional)
+                <br>Skewers for grilling
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. In a mixing bowl, add yogurt, gram flour, ginger-garlic paste, turmeric, red chili powder, garam masala, cumin powder, coriander powder, chaat masala, lemon juice, oil, and salt. Mix well to form a smooth marination.<br>
+                2. Add paneer cubes (and optionally, onion and bell pepper cubes) to the marinade. Gently toss to coat the paneer evenly with the mixture. Let it marinate for at least 30 minutes.<br>
+                3. Preheat the grill or oven to 180°C (350°F). Thread the marinated paneer cubes (and vegetables) onto skewers.<br>
+                4. Grill or bake the paneer tikka for 10-15 minutes, turning occasionally, until the paneer is lightly charred and cooked through.<br>
+                5. Remove from the grill or oven, sprinkle with more chaat masala, and serve hot with green chutney and lemon wedges.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src = "./img/panner tikka.jpeg.jpg" alt = "Paneer Tikka">
+        </div>
+        <div class = "meal-link">
+            <a href="https://youtu.be/c-oVDb-O2Q8?si=qUI7ui3lamqrFfqP" class="meal-link-btn" >Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+<div class = "seven-meal-detail" id="seven-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Lamb Curry</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Lamb Curry is a rich, flavorful dish that combines tender pieces of lamb with aromatic spices, tomatoes, and yogurt. A popular dish in Indian cuisine, it is known for its complex and deep flavors, often served with rice or naan.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p><br>500g lamb, cut into cubes
+                <br>2 onions, finely chopped
+                <br>2 tomatoes, chopped
+                <br>1/2 cup yogurt
+                <br>2 tbsp oil
+                <br>1 tbsp ginger-garlic paste
+                <br>1 tsp turmeric powder
+                <br>1 tsp red chili powder
+                <br>1 tsp garam masala
+                <br>1 tsp cumin powder
+                <br>1 tsp coriander powder
+                <br>1 bay leaf
+                <br>2-3 cardamom pods
+                <br>Salt to taste
+                <br>Fresh coriander for garnish
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. Heat oil in a large pan. Add bay leaf and cardamom pods. Let them crackle.<br>
+                2. Add chopped onions and sauté until golden brown.<br>
+                3. Stir in ginger-garlic paste and cook for 1-2 minutes.<br>
+                4. Add tomatoes and cook until they soften and oil starts to separate.<br>
+                5. Add all the spices (turmeric, red chili, cumin, coriander) and salt. Mix well.<br>
+                6. Add the lamb pieces and stir to coat them in the spices. Cook for 5-7 minutes until the lamb is browned.<br>
+                7. Lower the heat and add yogurt. Stir continuously to avoid curdling.<br>
+                8. Cover and simmer for 40-50 minutes, or until the lamb is tender. Add water if needed for more gravy.<br>
+                9. Once done, sprinkle garam masala and garnish with fresh coriander.<br>
+                10. Serve hot with rice or naan.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src = "./img/mutton curry.jpg" alt = "Lamb Curry">
+        </div>
+        <div class = "meal-link">
+            <a href="https://youtu.be/5t8mmAQkXWc?si=8gE9DSWbnFOUpP6Y" class="meal-link-btn" >Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+<div class = "eight-meal-detail" id="eight-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Chicken Tandoori</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Chicken Tandoori is a popular Indian dish where chicken is marinated in a mixture of yogurt and spices, then grilled or roasted in a clay oven called a "tandoor". The result is a juicy, flavorful dish that’s slightly smoky and delicious.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+            <p><br>4 chicken drumsticks or thighs
+                <br>1 cup yogurt
+                <br>2 tbsp lemon juice
+                <br>1 tbsp ginger-garlic paste
+                <br>1 tsp turmeric powder
+                <br>1 tsp red chili powder
+                <br>1 tsp cumin powder
+                <br>1 tsp coriander powder
+                <br>1 tsp garam masala
+                <br>Salt to taste
+                <br>2 tbsp vegetable oil
+                <br>Fresh coriander for garnish
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. In a large bowl, mix yogurt, lemon juice, ginger-garlic paste, turmeric, red chili powder, cumin, coriander, garam masala, salt, and oil to form a marinade.<br>
+                2. Make deep cuts in the chicken drumsticks to help the marinade penetrate. Coat the chicken with the marinade and refrigerate for at least 4 hours or overnight.<br>
+                3. Preheat a grill or oven to medium-high heat (around 200°C or 400°F).<br>
+                4. Grill the chicken for about 25-30 minutes, turning occasionally, until the chicken is fully cooked and slightly charred. If using an oven, bake for 30-35 minutes, turning halfway through.<br>
+                5. Once done, garnish with fresh coriander and serve hot with naan or rice.<br>
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src = "./img/air-fryer-whole-tandoori-chicken-3.jpg" alt = "Chicken Tandoori">
+        </div>
+        <div class = "meal-link">
+            <a href="https://youtu.be/0lFHJe3RK0c?si=fQiKucgNdHTLlMIu" class="meal-link-btn" >Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+<div class = "nine-meal-detail" id="nine-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Gulab Jamun</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Gulab Jamun is a classic Indian dessert made from milk solids, traditionally khoya, which is deep-fried and soaked in a sweet sugar syrup flavored with cardamom and rose water. It's a popular sweet treat during festivals and celebrations.</p>
+        </div>
+        <div class = "meal-instruct">
+            <h3>Ingredients:</h3>
+            <p><br>1 cup khoya (milk solids)
+                <br>1/4 cup all-purpose flour
+                <br>1/4 tsp baking soda
+                <br>1-2 tbsp milk (as needed)
+                <br>Oil or ghee for deep frying
+                <br><br>For the sugar syrup:
+                <br>1 1/2 cups sugar
+                <br>1 1/2 cups water
+                <br>1/4 tsp cardamom powder
+                <br>1 tsp rose water
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. In a bowl, combine khoya, all-purpose flour, and baking soda. Gradually add milk and knead the mixture into a soft dough.<br>
+                2. Divide the dough into small, smooth balls. Ensure there are no cracks to avoid bursting during frying.<br>
+                3. Heat oil or ghee in a deep pan over medium heat. Fry the balls until golden brown, stirring occasionally for even coloring. Remove and set aside.<br>
+                4. In another pan, prepare the sugar syrup by boiling water and sugar together. Add cardamom powder and rose water. Simmer for 5-6 minutes.<br>
+                5. Soak the fried balls in the warm sugar syrup for at least 30 minutes, allowing them to absorb the syrup.<br>
+                6. Serve warm or at room temperature. Enjoy your delicious Gulab Jamun!
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/gulab-jamun.webp" alt="Gulab Jamun">
+        </div>
+        <div class = "meal-link">
+            <a href="https://youtu.be/VVhs1wj9DhU?si=gatjn0ILujWbn5RS" class="meal-link-btn" >Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+<div class = "ten-meal-detail" id="ten-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Chole Bhature</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Chole Bhature is a popular North Indian dish made with spicy chickpeas (chole) served alongside fried, fluffy bread (bhature). It is a beloved street food dish, commonly eaten for breakfast or lunch, especially in the regions of Punjab.</p>
+        </div>
+        <div class = "meal-instruct">
+            <h3>Ingredients:</h3>
+            <p><br>1 cup dried chickpeas (chole)
+                <br>1 large onion, chopped
+                <br>2 tomatoes, pureed
+                <br>2 tsp ginger-garlic paste
+                <br>2 green chilies, slit
+                <br>1 tsp cumin seeds
+                <br>1 tsp coriander powder
+                <br>1 tsp garam masala
+                <br>1/2 tsp red chili powder
+                <br>1 tsp turmeric powder
+                <br>2 tsp chole masala
+                <br>1 tsp dried pomegranate seeds (anardana)
+                <br>Salt to taste
+                <br>Fresh coriander for garnish
+                <br>Oil for cooking
+                <br><br>For Bhature:
+                <br>2 cups all-purpose flour
+                <br>1/2 cup semolina (sooji)
+                <br>1/4 tsp baking soda
+                <br>1/2 cup yogurt
+                <br>Oil for deep frying
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                <b>For Chole:</b><br>
+                1. Soak chickpeas overnight. Drain and pressure cook them with salt and water until soft.<br>
+                2. Heat oil in a pan. Add cumin seeds, then add chopped onions and cook until golden brown. Add ginger-garlic paste and green chilies, sauté for a minute.<br>
+                3. Stir in tomato puree, cook until oil separates. Add turmeric, coriander powder, red chili powder, and chole masala. Cook for another 2-3 minutes.<br>
+                4. Add cooked chickpeas, anardana, and adjust salt. Simmer for 10-15 minutes to let the flavors blend.<br>
+                5. Garnish with fresh coriander leaves and serve hot.<br><br>
+                <b>For Bhature:</b><br>
+                1. In a bowl, mix flour, semolina, baking soda, and salt. Add yogurt and knead into a smooth dough. Cover and let it rest for 2 hours.<br>
+                2. Divide the dough into equal-sized balls. Roll each ball into a round disc (bhature).<br>
+                3. Heat oil in a deep pan. Fry each bhature until golden and puffed.<br>
+                4. Serve the bhature hot with the chole.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/chole.jpg" alt="Chole Bhature">
+        </div>
+        <div class = "meal-link">
+            <a href="https://youtu.be/VgmxulUH4tw?si=DkaYdenCgKV4vc6C" class="meal-link-btn" >Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+
+            
+
+            
+<div class = "eleven-meal-detail" id="eleven-meal-detail">
+    <!-- recipe close btn -->
+    <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+        <i class ="fas fa-times"></i>
+    </button>
+
+    <!-- recipe details -->
+    <div class="meal-content">
+        <h2 class="meal-name">Dal Makhani</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Dal Makhani is a creamy and buttery lentil dish that originates from Punjab, India. It is made with whole black lentils (urad dal) and kidney beans (rajma), cooked slowly with spices, butter, and cream. It's a rich and comforting dish perfect for any occasion.</p>
+        </div>
+        <div class = "meal-instruct">
+            <h3>Ingredients:</h3>
+            <p><br>1 cup whole black lentils (urad dal)
+                <br>1/4 cup red kidney beans (rajma)
+                <br>1 large onion, finely chopped
+                <br>2 tomatoes, pureed
+                <br>2 tsp ginger-garlic paste
+                <br>1 tsp cumin seeds
+                <br>1 tsp turmeric powder
+                <br>1 tsp red chili powder
+                <br>1 tsp garam masala
+                <br>2 tbsp butter
+                <br>1/4 cup fresh cream
+                <br>Salt to taste
+                <br>Fresh coriander leaves for garnish
+            </p>
+            <h3>Instructions:</h3>
+            <p>
+                1. Soak the black lentils and kidney beans overnight. Drain and pressure cook with salt and water until soft and mushy.<br>
+                2. Heat butter in a pan. Add cumin seeds, chopped onions, and sauté until golden brown. Add ginger-garlic paste and sauté for a minute.<br>
+                3. Add tomato puree, turmeric powder, and red chili powder. Cook until the oil separates from the mixture.<br>
+                4. Add the cooked dal and rajma to the pan. Mix well, and add some water if required to adjust the consistency.<br>
+                5. Simmer for 30-40 minutes on low heat, stirring occasionally. Add garam masala and fresh cream, and mix well.<br>
+                6. Garnish with fresh coriander leaves and a drizzle of cream. Serve hot with naan or rice.
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./img/dal mak.jpeg.jpg" alt="Dal Makhani">
+        </div>
+        <div class = "meal-link">
+            <a href="https://youtu.be/o3k55z-tv9I?si=ODw0P7xWMakDLeEP" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+ 
+            
+            
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="https://www.facebook.com" target="_blank" ><i class="	fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="	fab fa-linkedin"></i></a>
+            <a href="https://github.com/" target="_blank" "><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2024 RecipeBox . All right reserved</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>
